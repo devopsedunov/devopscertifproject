@@ -19,9 +19,9 @@ RUN sudo usermod -a -G docker jenkins
 USER jenkins
 ENV JENKINS_OPTS="--logfile=/var/log/jenkins/jenkins.log --prefix=/jenkins"
 
-COPY jenkins-entrypoint.sh /jenkins-entrypoint.sh
-RUN chmod 554 /jenkins-entrypoint.sh
+#COPY jenkins-entrypoint.sh /jenkins-entrypoint.sh
+RUN chmod 554 jenkins-entrypoint.sh
 
-ENTRYPOINT ["/jenkins-entrypoint.sh"]
+ENTRYPOINT ["jenkins-entrypoint.sh"]
 
 EXPOSE 80
