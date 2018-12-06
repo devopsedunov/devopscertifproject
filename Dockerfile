@@ -15,8 +15,10 @@ add-apt-repository \
 apt-get update && \
 apt-get -y install docker-ce
 RUN apt-get install -y docker-ce
+RUN chmod 664 /var/run/docker.sock
 RUN usermod -a -G docker jenkins
 USER jenkins
+#RUN usermod -a -G root $USER
 ENV JENKINS_OPTS="--logfile=/var/log/jenkins/jenkins.log --prefix=/jenkins"
 
 COPY jenkins-entrypoint.sh /jenkins-entrypoint.sh
