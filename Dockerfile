@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins:2.154
 MAINTAINER SWM EDUREKA DevOps "swmdevops@gmail.com"
 USER root
 RUN apt-get update && \
