@@ -32,7 +32,7 @@ ADD . /devopscertifproject
 
 ENTRYPOINT ["/jenkins-entrypoint.sh"]
 
-RUN cd devopscertifproject
+CMD cd devopscertifproject
 
 RUN javac TecAdminSeleniumTest.java
 
