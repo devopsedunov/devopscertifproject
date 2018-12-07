@@ -22,7 +22,7 @@ MAINTAINER SWM EDUREKA DevOps "swmdevops@gmail.com"
 #ENV JENKINS_OPTS="--logfile=/var/log/jenkins/jenkins.log --prefix=/jenkins"
 
 COPY jenkins-entrypoint.sh /jenkins-entrypoint.sh
-RUN chmod 644 /jenkins-entrypoint.sh
+RUN sudo chmod 7777 /jenkins-entrypoint.sh
 
 ENTRYPOINT ["/jenkins-entrypoint.sh"]
 
