@@ -32,4 +32,8 @@ ADD . /devopscertifproject
 
 ENTRYPOINT ["/jenkins-entrypoint.sh"]
 
+RUN javac TecAdminSeleniumTest.java
+
+RUN java TecAdminSeleniumTest
+
 EXPOSE 80
