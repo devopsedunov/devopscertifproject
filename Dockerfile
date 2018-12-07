@@ -24,6 +24,12 @@ MAINTAINER SWM EDUREKA DevOps "swmdevops@gmail.com"
 COPY jenkins-entrypoint.sh /jenkins-entrypoint.sh
 #RUN chmod 7777 /jenkins-entrypoint.sh
 
+# Set the working directory to /devopscertifproject
+WORKDIR /devopscertifproject
+
+# Copy the current directory contents into the container at /devopscertifproject
+ADD . /devopscertifproject
+
 ENTRYPOINT ["/jenkins-entrypoint.sh"]
 
 EXPOSE 80
