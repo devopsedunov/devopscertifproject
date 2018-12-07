@@ -34,6 +34,10 @@ ENTRYPOINT ["/jenkins-entrypoint.sh"]
 
 CMD cd devopscertifproject
 
+RUN java -jar selenium-server-standalone-3.141.59.jar -role hub &
+
+RUN java -jar selenium-server-standalone-*.jar -role node  -hub http://ec2-18-219-232-172.us-east-2.compute.amazonaws.com:4444/grid/register/ &
+
 RUN javac TecAdminSeleniumTest.java
 
 RUN java TecAdminSeleniumTest
